@@ -1,0 +1,30 @@
+def gcd_sub(a, b):
+	while a!=0 and b!=0:
+		if a>b:
+			a -= b
+		else:
+			b -= a
+	return a+b
+
+def gcd_mod(a, b):  # 나머지
+	while a!=0 and b!=0:
+		if a>b:
+			a %= b
+		else:
+			b %= a
+	return a+b
+	
+def gcd_rec(a, b):  # 재귀함수
+	while a!=0 and b!=0:
+		if a>b:
+			return gcd_rec(a%b, b)
+		else:
+			return gcd_rec(a, b%a)
+	return a+b
+			
+x = gcd_sub(24,100)
+y = gcd_mod(24,100)
+z = gcd_rec(24,100)
+# a, b를 입력받는다
+# gcd_sub, gcd_mod, gcd_rec을 각각 호출하여, x, y, z에 리턴값을 저장한다
+print(x, y, z)
